@@ -1,0 +1,124 @@
+/* ── Page shell ─────────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+}
+
+/* ── Body (contains spinner, error, and content) ── */
+.body {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Loading / Error ────────────────────────────── */
+.errorState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-sans);
+  color: var(--color-text-muted);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+
+/* ── Content ────────────────────────────────────── */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+  gap: 0;
+}
+
+/* ── CS block ───────────────────────────────────── */
+.csBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-lg);
+}
+
+.csLabel {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 2.1vw, 1rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.csEmail {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  transition: color var(--transition-base);
+}
+
+.csEmail:hover {
+  color: var(--color-sepia);
+}
+
+/* ── Divider ────────────────────────────────────── */
+.divider {
+  width: clamp(40px, 8vw, 80px);
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Comissões list ─────────────────────────────── */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md) var(--space-xl);
+  width: 100%;
+  max-width: 900px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.itemNome {
+  font-family: var(--font-sans);
+  font-size: clamp(0.6rem, 1.4vw, 0.7rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.itemEmail {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--color-text);
+  transition: color var(--transition-base);
+}
+
+.itemEmail:hover {
+  color: var(--color-sepia);
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .content {
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+  }
+}
